@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+$shadow: 0 10px 20px 0 rgba(0,0,0,.2);
+$shadow-1: 0 10px 30px 0 rgba(0,0,0,.3);
+
+$dark-cyan: #53a2a3;
+$cyan: #64babb;
+$light-cyan: #f0fafb;
+
+body {
+  background: $light-cyan;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/*.flex{display: flex;}
+.grow{flex-grow: 1;}*/
+
+#App {
+  background: linear-gradient(to bottom, $cyan 0px, $cyan 130px, transparent 130px);
+  padding: 60px 20px 20px;
+
+  .container{
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+#add-form{
+  color: #fff;
+
+  .label-input{
+    font-size: 20px;
+  }
+
+  input, .btn-add{
+    font-family: 'Quicksand', sans-serif;
+  }
+  input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+
+  .btn-add{
+    color: $cyan;
+    background: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+
+    &:hover{
+      filter: brightness(.9);
+    }
+  }
+}
+
+#filter-form{
+  background: #fff;
+  padding: 15px 20px;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  user-select: none;
+
+  .label-filter{
+    display: block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: $dark-cyan;
+    background: $light-cyan;
+    border-radius: 3px;
+  }
+}
+
+#colors{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  width: 100%;
+
+  .box{
+    background: #fff;
+    margin: 10px 15px;
+    box-shadow: $shadow;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .5s;
+
+    &:hover{
+      transform: scale(1.03);
+      box-shadow: $shadow-1;
+    }
+
+    .preview{
+      width: 100%;
+      height: 140px;
+    }
+
+    .info{
+      display: flex;
+      padding: 2px 5px;
+    }
+
+    .color-name{
+      color: $dark-cyan;
+      margin: 5px 0;
+      flex-grow: 1;
+    }
+
+    .btn-delete{
+      background: none;
+      border: none;
+    }
+  }
+}
